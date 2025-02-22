@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 const GetAllJobs = () => {
   const dispatch = useDispatch();
   const { searchedQuery } = useSelector((state) => state.job);
-  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const getAllJobs = async () => {
@@ -17,7 +16,7 @@ const GetAllJobs = () => {
             withCredentials: true,
             headers: {
               Authorization: `Bearer ${token}`, // ✅ Token header add kiya
-              "Content-Type": "application/json",
+              'Content-Type': 'application/json',
             },
           }
         );
@@ -26,16 +25,11 @@ const GetAllJobs = () => {
           dispatch(setAllJobs(res.data.jobs));
         }
       } catch (error) {
-        console.error("Error fetching jobs:", error);
+        console.log(error);
       }
     };
-
-    if (searchedQuery) {
-      getAllJobs(); // ✅ searchedQuery hone par hi API call hogi
-    }
-  }, [searchedQuery]); // ✅ searchedQuery dependency array me add kiya
-
-  return null; // ✅ Kyunki yeh sirf API call handle kar raha hai
+    getAllJobs();
+  }, []);
 };
 
 export default GetAllJobs;
