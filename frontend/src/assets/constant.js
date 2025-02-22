@@ -1,9 +1,9 @@
 // const url = 'https://job-portal-szea.onrender.com';
 
-const url = 'http://localhost:3000';
+const url = 'https://job-portal-kpvv.onrender.com';
 
 export const USER_API = `${url}/user`;
-// console.log(USER_API)
+// console.log(USER_API
 
 export const JOB_API = `${url}/job`;
 
