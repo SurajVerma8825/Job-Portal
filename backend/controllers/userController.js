@@ -61,7 +61,6 @@ const signupUser = async (req, res) => {
   }
 };
 
-
 const loginUser = async (req, res) => {
   try {
     const { email, role, password } = req.body;
@@ -101,7 +100,9 @@ const loginUser = async (req, res) => {
       .status(200)
       .cookie('token', token, {
         maxAge: 1 * 24 * 60 * 60 * 1000,
-        httpOnly: true,
+        httpsOnly: true,
+        secure: true, 
+        sameSite: 'none',
       })
       .json({
         message: `Welcome back ${user.fullName}`,

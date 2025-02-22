@@ -18,11 +18,14 @@ const port = process.env.PORT || 5000;
 //! Middleware Configuration
 app.use(
   cors({
-    origin: 'https://job-portal-kpvv.onrender.com', // Allowed origins
-    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Allowed HTTP methods
-    credentials: true, 
+    origin: "https://job-portal-kpvv.onrender.com",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true, // ✅ Cookies allow karega
+    allowedHeaders: ["Content-Type", "Authorization"], // ✅ Ye zaroori hai
   })
 );
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
