@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-const tailwindcssAnimate = require('tailwindcss-animate');
+import tailwindcssAnimate from 'tailwindcss-animate';
 
-module.exports = {
+export default {
   darkMode: ['class'],
   content: [
     './index.html', // ✅ Ensure root HTML is included
@@ -10,7 +10,7 @@ module.exports = {
     './app/**/*.{js,jsx}',
     './src/**/*.{js,jsx}',
   ],
-  prefix: '', // ✅ No unnecessary changes
+  prefix: '',
   theme: {
     container: {
       center: true,
@@ -21,7 +21,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        designColor: '#6A38C2', // ✅ Custom color
+        designColor: '#6A38C2',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -77,5 +77,5 @@ module.exports = {
       },
     },
   },
-  plugins: [tailwindcssAnimate], // ✅ `require()` corrected
+  plugins: [tailwindcssAnimate], // ✅ ESM compatible import
 };
