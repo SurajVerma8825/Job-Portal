@@ -8,14 +8,11 @@ const GetAllJobs = () => {
   const { searchedQuery } = useSelector((store) => store.job);
   const { user } = useSelector((store) => store.auth);
   console.log("user" , user);
-  
+
 
   useEffect(() => {
     const fetchAllJobs = async () => {
-      if (!user) {
-        console.log('No user logged in, skipping job fetch.');
-        return; // ✅ Agar user nahi hai to request mat bhejo
-      }
+     
 
       try {
         const res = await axios.get(
