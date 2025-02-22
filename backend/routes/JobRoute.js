@@ -12,7 +12,7 @@ const jobRoute = express.Router();
 
 jobRoute.post('/addJob', isAuthenticated, postJob);
 
-jobRoute.get('/allJobs', isAuthenticated, getAllJobs);
+jobRoute.get('/allJobs', getAllJobs);
 
 jobRoute.get('/jobs/:id', isAuthenticated, getJobById);
 

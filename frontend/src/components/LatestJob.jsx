@@ -12,7 +12,7 @@ const LatestJob = () => {
       </h1>
 
       <div className="grid grid-cols-3 gap-4 mt-8 ">
-        {allJobs.length <= 0 ? (
+        {allJobs?.length <= 0 ? (
           <span>No Job Availible </span>
         ) : (
           allJobs?.slice(0, 6).map((job) => <JobCard key={job._id} job={job} />)
