@@ -16,16 +16,26 @@ const applicationRouter = require('./routes/ApplicationRoute');
 const port = process.env.PORT || 5000;
 
 //! Middleware Configuration
+const allowedOrigins = [
+  'https://job-portal-kpvv.onrender.com',
+  'http://localhost:5000', // ✅ Local testing ke liye
+];
+
 app.use(
   cors({
-    origin: "https://job-portal-kpvv.onrender.com",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    credentials: true, // ✅ Cookies allow karega
-    allowedHeaders: ["Content-Type", "Authorization"], // ✅ Ye zaroori hai
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        // ✅ Agar origin `null` hai (Postman ya direct browser request), tab bhi allow hoga
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
-
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
