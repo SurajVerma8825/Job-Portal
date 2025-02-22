@@ -11,7 +11,9 @@ const JobCard = ({ job }) => {
                  hover:shadow-xl hover:scale-105 border-gray-200 min-h-[320px] flex flex-col justify-between"
     >
       {/* Company Name */}
-      <h1 className="text-lg font-semibold text-gray-800">{job?.company?.name}</h1>
+      <h1 className="text-lg font-semibold text-gray-800">
+        {job?.company?.name}
+      </h1>
 
       {/* Location */}
       <div className="flex items-center gap-2 text-sm text-gray-500 mt-1">
@@ -28,7 +30,10 @@ const JobCard = ({ job }) => {
       {/* Skills Required */}
       <div className="flex flex-wrap gap-2 mt-3">
         {job?.requirements.map((item, index) => (
-          <Badge key={index} className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">
+          <Badge
+            key={index}
+            className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs"
+          >
             {item}
           </Badge>
         ))}
@@ -37,7 +42,7 @@ const JobCard = ({ job }) => {
       {/* Job Details */}
       <div className="flex items-center flex-wrap gap-2 mt-4">
         <Badge className="text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
-          {job?.position } Positions
+          {job?.position} Positions
         </Badge>
         <Badge className="text-red-700 bg-red-100 px-3 py-1 rounded-full">
           {job?.jobType}

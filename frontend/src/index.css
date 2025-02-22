@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .border-border {
+    border-color: theme("colors.border");
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

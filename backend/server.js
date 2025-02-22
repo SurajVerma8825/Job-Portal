@@ -18,7 +18,7 @@ const port = process.env.PORT || 5000;
 //! Middleware Configuration
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://job-portal-yljy.vercel.app'], // Allowed origins
+    origin: ['http://localhost:5173'], // Allowed origins
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'], // Allowed HTTP methods
     credentials: true, // Allow cookies to be sent with requests
   })
