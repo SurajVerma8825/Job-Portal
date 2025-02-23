@@ -80,7 +80,7 @@ const AdminJobsTable = () => {
               </TableCell>
               <TableCell className=" text-center ">{job.title}</TableCell>
               <TableCell className=" text-center">
-                {job.createdAt.split('T')[0]}
+                {job.createdAt?.split('T')[0]}
               </TableCell>
               <TableCell className=" text-right">
                 <div className="flex items-center justify-evenly gap-2 ">

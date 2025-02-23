@@ -12,8 +12,6 @@ const GetAllJobs = () => {
 
   useEffect(() => {
     const fetchAllJobs = async () => {
-     
-
       try {
         const res = await axios.get(
           `https://job-portal-kpvv.onrender.com/job/alljobs?keyword=${searchedQuery || ''}`,

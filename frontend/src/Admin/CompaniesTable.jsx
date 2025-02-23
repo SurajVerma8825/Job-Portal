@@ -87,7 +87,7 @@ const CompaniesTable = () => {
               </TableCell>
               <TableCell className="text-center px-4 py-3 text-gray-700">{company.name}</TableCell>
               <TableCell className="text-center px-4 py-3 text-gray-500">
-                {company.createdAt.split('T')[0]}
+                {company?.createdAt.split('T')[0]}
               </TableCell>
               <TableCell className="text-right px-4 py-3">
                 <div className="flex gap-4 justify-end">

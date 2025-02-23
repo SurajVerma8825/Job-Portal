@@ -56,13 +56,13 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="hover:text-white transition-colors duration-300">
-              <Link to="/about">About Us</Link>
+              <Link to="/">About Us</Link>
             </li>
             <li className="hover:text-white transition-colors duration-300">
-              <Link to="/delivery">Delivery</Link>
+              <Link to="/">Delivery</Link>
             </li>
             <li className="hover:text-white transition-colors duration-300">
-              <Link to="/privacy-policy">Privacy Policy</Link>
+              <Link to="/">Privacy Policy</Link>
             </li>
           </ul>
         </div>
@@ -79,11 +79,7 @@ const Footer = () => {
             </li>
           </ul>
 
-          <Link to="/apply">
-            <Button className="mt-6 w-full py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-md transition-all duration-300">
-              Apply Now
-            </Button>
-          </Link>
+
         </div>
       </div>
 

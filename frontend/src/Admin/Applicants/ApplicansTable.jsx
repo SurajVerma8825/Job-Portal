@@ -85,7 +85,7 @@ const ApplicantsTable = () => {
                   )}
                 </TableCell>
                 <TableCell className=" text-center ">
-                  {item?.applicant.createdAt.split('T')[0]}
+                  {item?.applicant?.createdAt.split('T')[0]}
                 </TableCell>
                 <TableCell className="text-right">
                   <Popover>

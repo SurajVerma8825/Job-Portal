@@ -7,13 +7,20 @@ const ProtectedRoute = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user === 'null' || user.role !== 'recruiter') {
+    if (user && user.role !== 'recruiter') {
       navigate('/');
     }
   }, [user, navigate]);
 
-  // Only render children if the user is a recruiter
-  return user && user.role === 'recruiter' ? children : null;
+  if (user === null) {
+    return (
+      <div className="flex items-center justify-center min-h-screen text-lg">
+        Loading...
+      </div>
+    );
+  }
+
+  return user?.role === 'recruiter' ? children : null;
 };
 
 export default ProtectedRoute;

@@ -114,7 +114,7 @@ const Navbar = () => {
                   </div>
 
                   <div className="flex justify-between px-2">
-                    {user && user.role === 'student' && (
+                    {user && user?.role === 'student' && (
                       <div className="flex items-center mt-2">
                         <FiUser className="text-xl" />
                         <Button
