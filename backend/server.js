@@ -32,7 +32,7 @@ app.use('/company', companyRouter);
 app.use('/job', jobRoute);
 app.use('/application', applicationRouter);
 
-app.get('/',  (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
 
